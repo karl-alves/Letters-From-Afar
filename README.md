@@ -1,6 +1,6 @@
 # Letters From Afar
 
-A starfield landing page for writing and reading letters across the stars.
+A cute little project for long distance — send letters in a more interactive and authentic way instead of long texts.
 
 **Live site (after Pages is enabled):** https://karl-alves.github.io/Letters-From-Afar/
 
