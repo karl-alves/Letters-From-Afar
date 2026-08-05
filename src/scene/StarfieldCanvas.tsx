@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { OrthographicCamera } from 'three'
 import { usePointer } from '../hooks/usePointer'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { ShootingStars } from './ShootingStars'
 import { Starfield } from './Starfield'
 
 /**
@@ -81,6 +82,7 @@ export function StarfieldCanvas() {
       >
         <OrthoCameraSync />
         <Starfield pointer={pointer} reducedMotion={reducedMotion} />
+        <ShootingStars reducedMotion={reducedMotion} />
       </Canvas>
     </div>
   )

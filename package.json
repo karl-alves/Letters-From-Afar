@@ -1,7 +1,7 @@
 {
   "name": "letters-from-afar",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
+    "@supabase/supabase-js": "^2.112.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "three": "^0.175.0"

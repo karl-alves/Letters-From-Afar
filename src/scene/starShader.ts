@@ -32,8 +32,8 @@ void main() {
 
   if (dist > 0.0001 && uReducedMotion < 0.5) {
     vec2 dir = (uMouse - pos.xy) / dist;
-    // Displacement proportional to dist * falloff peaks mid-radius → bright ring
-    pos.xy += dir * dist * falloff * strength * 0.85;
+    // Softer pinch — still a lens pocket, less dramatic pull
+    pos.xy += dir * dist * falloff * strength * 0.46;
   }
 
   float twinkle = 0.55 + 0.45 * sin(uTime * aTwinkleSpeed + aPhase);
@@ -44,7 +44,7 @@ void main() {
   }
 
   float baseBright = mix(0.35, 1.0, aDepth);
-  float magnify = 1.0 + falloff * strength * 1.4;
+  float magnify = 1.0 + falloff * strength * 0.63;
 
   vAlpha = clamp((twinkle + sparkle) * baseBright * magnify, 0.0, 1.0);
   vSizeNorm = aSize;
@@ -53,7 +53,7 @@ void main() {
   vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
   gl_Position = projectionMatrix * mvPosition;
 
-  float sizeBoost = 1.0 + falloff * strength * 1.8;
+  float sizeBoost = 1.0 + falloff * strength * 0.86;
   // Orthographic: scale point size in CSS pixels (aSize ~0.15–1.15)
   gl_PointSize = max(aSize * sizeBoost * uPixelRatio * 18.0, 2.0 * uPixelRatio);
 }

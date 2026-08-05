@@ -11,9 +11,9 @@ type StarfieldProps = {
 }
 
 function starCountForViewport(width: number) {
-  if (width < 640) return 1600
-  if (width < 1024) return 2400
-  return 3200
+  if (width < 640) return 1398
+  if (width < 1024) return 2098
+  return 2797
 }
 
 function createStarGeometry(count: number, aspect: number) {
@@ -83,7 +83,7 @@ export function Starfield({ pointer, reducedMotion }: StarfieldProps) {
     () => ({
       uTime: { value: 0 },
       uMouse: { value: new THREE.Vector2(0, 0) },
-      uLensRadius: { value: 0.55 },
+      uLensRadius: { value: 0.48 },
       uLensStrength: { value: 0 },
       uPixelRatio: { value: Math.min(gl.getPixelRatio(), 2) },
       uReducedMotion: { value: reducedMotion ? 1 : 0 },
@@ -100,7 +100,7 @@ export function Starfield({ pointer, reducedMotion }: StarfieldProps) {
     }
 
     const target = pointer.current
-    const desiredStrength = target?.active && !reducedMotion ? 1 : 0
+    const desiredStrength = target?.active && !reducedMotion ? 0.63 : 0
     lensStrength.current = THREE.MathUtils.damp(
       lensStrength.current,
       desiredStrength,
